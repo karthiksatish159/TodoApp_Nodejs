@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('nav'); -%>
+    <h1>Hello we are in views</h1>
+    <%
+        if(typeof message==='undefined'||message===null)
+        {%>
+            <h1>Please register if you are not yet</h1>
+        <%}
+        else if(typeof message!==undefined)
+        {%>
+            <h1><%=message%></h1>
+        <%}
+    %>
+    <p>Login into website you can create your own todo list</p>
+</body>
+</html>
