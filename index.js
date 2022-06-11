@@ -23,14 +23,11 @@ mongoose.connect(db,{useNewUrlParser: true})
 .catch(err=>console.log(err));
 app.use(passport.initialize());
 require("./strategies/jwtstrategy")(passport);
-app.use("/",(req,res)=>
+
+app.get("/home",(req,res)=>
 {
     res.send("Hello word");
 })
-// app.get("/",(req,res)=>
-// {
-//     res.send("Hello word");
-// })
 //routes
 app.use('/auth',auth);
 app.use('/todo',todo);
