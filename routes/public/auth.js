@@ -29,7 +29,7 @@ router.post('/addUser',(req,res)=>
         {
             if(person)
             {
-                res.render('index',{message:"The user is already existed"});
+                res.render('index',{message:"The user is already existed",flag:0});
             }
             else
             {
@@ -47,7 +47,7 @@ router.post('/addUser',(req,res)=>
                         {
                             if(err)
                             {
-                                throw err;
+                                res.redirect("/");
                             }
                             else
                             {
@@ -137,7 +137,7 @@ router.post('/verify',(req,res)=>
                         else
                         {
                             console.log("Worng password");
-                            res.redirect('/login',{flag:0});
+                            res.redirect('/index',{flag:0});
                         }
                     })
                 .catch(err=>console.log(err))

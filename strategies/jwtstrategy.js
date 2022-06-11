@@ -1,11 +1,12 @@
 const JwtStrategy=require('passport-jwt').Strategy;
 const ExtractJwt=require('passport-jwt').ExtractJwt;
-const passport = require('passport');
+
 const myKey=require('../setup/myUrls');
 const opts={}
 const User=require('../models/User');
 const cookieExtractor = function (req) {
     let token = req.cookies.token;
+    console.log(req.cookies);
     return token;
 };
 opts.jwtFromRequest=cookieExtractor
