@@ -54,13 +54,13 @@ router.post('/addUser',(req,res)=>
                                         var transporter = nodemailer.createTransport({
                                             service: 'gmail',
                                             auth: {
-                                              user: 'karthiksatish157@gmail.com',
-                                              pass: 'Satishvijji1234+'
+                                              user: 'your@gmail.com',
+                                              pass: 'password'
                                             }
                                           });
                                           
                                           var mailOptions = {
-                                            from: 'karthiksatish157@gmail.com',
+                                            from: 'your@gmail.com',
                                             to: `${req.body.email}`,
                                             subject: 'Sending Email using Node.js',
                                             text: `Hi My name karthik this my first project in nodejs with crud operations
